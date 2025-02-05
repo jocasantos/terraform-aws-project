@@ -2,6 +2,9 @@
 apt update
 apt install -y apache2
 
+# Wait to ensure instance metadata is available
+sleep 5
+
 # Get the instance ID using the instance metadata
 INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 
