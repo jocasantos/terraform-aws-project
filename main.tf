@@ -12,6 +12,7 @@ module "ec2" {
   instance_type = var.instance_type  
   vpc_id            = module.vpc.vpc_id
   target_group_arn  = module.loadbalancer.target_group_arn
+  userdata = var.userdata
 }
 
 module "loadbalancer" {

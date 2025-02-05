@@ -3,4 +3,7 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
 }
 
-## alb ip
+output "alb_dns_name" {
+  description = "The DNS name of the ALB"
+  value       = module.loadbalancer.alb_dns_name
+}

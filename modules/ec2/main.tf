@@ -34,7 +34,7 @@ resource "aws_instance" "web" {
   instance_type = var.instance_type       # Choose the instance size you need
   subnet_id     = element(var.public_subnet_ids, count.index)
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
-  user_data = base64encode(file(userdata.sh))
+  user_data = base64encode(file(var.userdata))
 
   tags = {
     Name = "WebServer ${count.index + 1}"

@@ -22,3 +22,8 @@ variable "target_group_arn" {
   description = "The ARN of the target group to register the instances with."
   type        = string
 }
+
+variable "userdata" {
+  description = "The start script for the instance"
+  type = string
+}

@@ -33,3 +33,9 @@ variable "instance_type" {
   default = "t3.micro"
   type        = string
 }
+
+variable "userdata" {
+  description = "The start script for the instance"
+  default = "userdata.sh"
+  type = string
+}
