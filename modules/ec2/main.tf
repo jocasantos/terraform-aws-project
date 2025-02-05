@@ -33,8 +33,8 @@ resource "aws_instance" "web" {
   ami           = var.ami  # Replace with an appropriate AMI ID for your region
   instance_type = var.instance_type       # Choose the instance size you need
   subnet_id     = element(var.public_subnet_ids, count.index)
-
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  user_data = base64encode(file(userdata.sh))
 
   tags = {
     Name = "WebServer ${count.index + 1}"
