@@ -5,9 +5,9 @@ Guide on setting up infrastructure on AWS using Terraform
 - AWS CLI
 - Terraform (https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
 
-Project overview
+### Project overview
 
-![infrastructure diagram](https://freeimage.host/i/2DCMkn1)
+![infrastructure diagram](/vpc-diagram?raw=true)
 
 - Create a new VPC with 2 public subnets (in 2 different AZs), an Internet Gateway (IGW) and Routetables for connect the public subnets and the Internet Gateway.
 - Create 2 EC2 instances with Metadata (attach shell script) and a Security Group (don't forget to create the inbound and outbound rules).
