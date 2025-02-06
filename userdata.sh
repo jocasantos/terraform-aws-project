@@ -2,11 +2,11 @@
 apt update
 apt install -y apache2
 
-# Wait to ensure instance metadata is available
-sleep 5
+# Fetch the IMDSv2 token
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
 
-# Get the instance ID using the instance metadata
-INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
+# Get the instance ID using IMDSv2 with the token
+INSTANCE_ID=$(curl -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/instance-id)
 
 # Install the AWS CLI
 apt install -y awscli
