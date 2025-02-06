@@ -7,7 +7,7 @@ Guide on setting up infrastructure on AWS using Terraform
 
 ### Project overview
 
-![infrastructure diagram](/vpc-diagram?raw=true)
+![infrastructure diagram](/vpc-diagram.png?raw=true)
 
 - Create a new VPC with 2 public subnets (in 2 different AZs), an Internet Gateway (IGW) and Routetables for connect the public subnets and the Internet Gateway.
 - Create 2 EC2 instances with Metadata (attach shell script) and a Security Group (don't forget to create the inbound and outbound rules).
